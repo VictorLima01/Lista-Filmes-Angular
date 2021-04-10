@@ -1,5 +1,20 @@
-<div class="header"></div>
-<div class="teste" *ngFor="let filme of filmes.default">
-  <img src={{filme.poster}} style="width: 100px;" alt="">
-  <p>{{filme.nome}}</p>
+<div class="header">
+  <!-- <label style="font-family: fantasy;font-size: xx-large;margin-right: 15px;color: white;">Lista de Filmes da </label> -->
+  <img src="../assets/Marvel_Logo.svg.png" style="width: 227px;PADDING-TOP: 20px;" alt="">  
+  <div>
+    
+  </div>
+</div>
+<div class="backGround">
+  <div class="cardMovie" style="padding-top: 10px;" *ngFor="let filme of filmes.default">
+    <p>{{filme.nome}} / {{filme.ano}}</p>
+    <img src={{filme.poster}} class="img" style="width: 177px;border-radius: 10px" alt="">
+    <div>
+      
+
+      <p>{{filme.diretor}}</p>
+      <p>{{filme.genero}}</p>
+      <p style="padding-bottom: 50px;text-align: justify;margin: auto;width: 50%;padding: 10px;">{{filme.descricao}}</p>
+    </div>
+  </div>
 </div>
