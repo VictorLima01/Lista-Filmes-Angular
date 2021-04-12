@@ -8,8 +8,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./lista-filmes.component.scss']
 })
 
-// background-image: linear-gradient(red, yellow);
-
 export class ListaFilmesComponent implements OnInit {
 
   public titleModal = '';
