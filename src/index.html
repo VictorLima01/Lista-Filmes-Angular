@@ -8,6 +8,31 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <!-- <header>
+    <button routerLink="/lista" routerLinkActive="selected">
+      <a href="/lista">Lista Filmes</a>
+    </button>
+    <button routerLink="/locadora" routerLinkActive="selected">
+      <a href="/locadora">Locadora</a>
+    </button>
+  </header> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <img style="width: 200px;" src="../src/assets/marvel-logo.png" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/lista">Lista filmes Marvel <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/locadora">Locadora</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <app-root></app-root>
 </body>
 </html>
