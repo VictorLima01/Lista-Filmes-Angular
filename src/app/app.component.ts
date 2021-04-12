@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as data from './filmes.json';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,11 +8,6 @@ import * as data from './filmes.json';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   ngOnInit(): void {
-    this.filmes = data;
-    console.log(data)
-  }
-  title = 'filmes';
-  public filmes: any;
+  }  
 }
