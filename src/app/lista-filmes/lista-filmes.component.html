@@ -1,0 +1,46 @@
+<!-- <div class="header">
+   <label style="font-family: fantasy;font-size: xx-large;margin-right: 15px;color: white;">Lista de Filmes da </label> 
+  <img src="../assets/Marvel_Logo.svg.png" style="width: 227px;PADDING-TOP: 20px;" alt="">  
+  <div>
+  </div>
+</div>
+<div class="backGround">
+  <div class="cardMovie" style="padding-top: 10px;" *ngFor="let filme of filmes.default">
+    <p>{{filme.nome}} / {{filme.ano}}</p>
+    <img src={{filme.poster}} class="img" style="width: 177px;border-radius: 10px" alt="">
+    <div>
+      
+
+      <p>{{filme.diretor}}</p>
+      <p>{{filme.genero}}</p>
+      <p style="padding-bottom: 50px;text-align: justify;margin: auto;width: 50%;padding: 10px;">{{filme.descricao}}</p>
+    </div>
+  </div>
+</div>  -->
+
+<div class="row p-3">
+    <div class="col-md-4" *ngFor="let filme of filmes.default">
+        <div class="card shadow-card">
+            <div class="card-body align-items-center justify-content-center d-flex flex-column">
+                <label class="label-title">{{filme.nome}}</label>
+                <img src={{filme.poster}} alt="" class="img">
+                <p>{{filme.ano}}</p>
+                <p>{{filme.diretor}}</p>
+                <p>{{filme.genero}}</p>
+                <p class="p-description">{{filme.descricao}}</p>
+                <button class="btn btn-primary" (click)="openModal(modal, filme.nome, filme.trailer)">Trailer do filme</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{titleModal}} - Trailer</h4>
+    </div>
+    <div style="height: 400px" class="modal-body">
+         <iframe width="90%" height="90%" src="https://www.youtube.com/embed/t_ULBP6V9bg" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+</ng-template>
