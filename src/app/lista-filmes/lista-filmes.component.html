@@ -38,9 +38,9 @@
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">{{titleModal}} - Trailer</h4>
     </div>
-    <div style="height: 400px" class="modal-body">
-         <iframe width="90%" height="90%" src="https://www.youtube.com/embed/t_ULBP6V9bg" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+    <div style="height: 400px" class="modal-body" *ngFor="let filme of filmes.default">
+      <iframe width="90%" height="90%" src="https://www.youtube.com/embed/t_ULBP6V9bg" title="YouTube video player"
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
     </div>
 </ng-template>
