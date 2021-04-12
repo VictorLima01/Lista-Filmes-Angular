@@ -1,0 +1,16 @@
+a { color: #666;display:inline-block; margin:0; }
+
+
+.linkActive {
+    border-bottom: solid 3px red;         
+}
+
+.linkAnimation:after {
+        display:block;
+        content: '';
+        border-bottom: solid 3px red;    
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+}
+
+.linkAnimation:hover:after { transform: scaleX(1); }

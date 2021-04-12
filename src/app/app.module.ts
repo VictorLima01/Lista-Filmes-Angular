@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { GridCssComponent } from './grid-css/grid-css.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GridCssComponent } from './grid-css/grid-css.component';
     LocadoraComponent,
     ListaFilmesComponent,
     SafeUrlPipe,
-    GridCssComponent
+    GridCssComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
