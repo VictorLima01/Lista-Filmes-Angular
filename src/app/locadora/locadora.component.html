@@ -2,52 +2,185 @@
     <div class="card">
         <div class="card-body">
           <h5 class="card-title">Locadora</h5>
-            <form>
+          <p class="card-description">Cadastre um filme que será alugado pelo cliente</p>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="row">
+                <div class="col-lg-6">
+                  <button type="button" class="btn btn-info p-2 mr-2"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                    </svg>
+                    Novo</button>
+                      <button (click) = "clear()" type="button" class="btn btn-secondary p-2 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-scissors" viewBox="0 0 16 16">
+                          <path d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.73l-1.572 2.177a2.5 2.5 0 1 1-.794-.637L7.19 8.61 3.5 3.5zm2.5 10a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zm7 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+                        </svg>
+                        Limpar campos</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="row">
+                <div class="col-md-2">
+                  <input  disabled style="width: 185px;box-shadow: 0px 0px 6px rgb(0 0 0 / 65%);" type="text" class="form-control" value="Total de registros 131"/>
+                </div>
+              </div>
+            </div>
+          </div>
+            <form class="mt-2" [formGroup]="formLocadora">
+              <div class="row">
+                <div class="col-md-12">
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  <div class="form-group col-md-3">
+                    <label for="inputEmail4">Número do filme</label>
+                    <input formControlName="numberMovie" type="email" class="form-control" name="numberMovie" id="numberMovie" placeholder="Número do filme">
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Tipo do produto</label>
+                    <select  id="inputState" class="form-control">
+                      <option selected>Selecione o produto</option>
+                      <option>VHS</option>
+                      <option>CD</option>
+                      <option>Disquete</option>
+                    </select>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress2">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Tipo de filme</label>
                     <select id="inputState" class="form-control">
-                      <option selected>Choose...</option>
+                      <option selected>Selecione o tempo</option>
+                      <option>24 horas</option>
+                      <option>12 horas</option>
+                      <option>8 horas</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="inputPassword4">Gênero</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Selecione o gênero</option>
+                      <option>Ação</option>
+                      <option>Aventura</option>
+                      <option>Terror</option>
+                      <option value="">Suspense</option>
+                      <option value="">Comédia</option>
+                      <option value="">Romance</option>
+                      <option value="">Drama</option>
+                      <option value="">Ficção</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <label for="inputAddress2">Titulo do filme</label>
+                    <div class="input-group">
+                      <input formControlName="titleMovie" name="titleMovie" id="titleMovie" type="text" class="form-control" placeholder="Titulo do filme" aria-label="Titulo do filme" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                          Buscar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1">Selecione uma imagem</label>
+                    <input accept=".jpg,.gif,.png" type="file" class="form-control-file btn btn-primary" id="exampleFormControlFile1">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="inputAddress2">Principais diretores</label>
+                    <input formControlName="directors" type="text" class="form-control" id="inputAddress2" placeholder="Principais diretores">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="inputAddress2">Fornecedor</label>
+                    <select id="inputState" class="form-control">
+                      <option>Nova Era Video</option>
                       <option>...</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Tipo de Idioma</label>
+                    <input formControlName="language" type="email" class="form-control" id="inputEmail4" placeholder="Tipo de Idioma">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Valor da Locação</label>
+                    <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" autocomplete="off" formControlName="valor" name="value" id="value" type="text" class="form-control" placeholder="Valor da Locação">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Data da Locação</label> 
+                    <input formControlName="data" name="date" id="date" type="date" class="form-control" placeholder="Data da Locação">
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Check me out
-                    </label>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
+                <button (click)="onSubmit()" type="button" class="btn btn-success ml-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                  </svg>
+                  Salvar</button>
               </form>
         </div>
     </div>
 </div>
+
+<div class="row p-3">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <H5 class="card-title">Filmes Cadastrados: </H5>
+            <p class="card-description">Lista de filmes que serão cadastrados acima</p>
+            <!-- <button type="button" class="btn btn-warning p-2 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+              </svg>
+              Arquivo</button>  -->
+              <!-- <div class="row">
+                <div class="col-md-4">
+                  <label for="">Importe um Arquivo csv ou txt</label>
+                  <input accept=".csv,.txt" type="file" class="form-control-file btn btn-warning" id="exampleFormControlFile1">
+                </div>
+              </div> -->
+            <table id="tablerecords" class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Numero do Filme</th>
+                  <th scope="col">Titulo do Filme</th>
+                  <th scope="col">Valor</th>
+                  <th scope="col">Data Cadastro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lista of tabela">
+                  <th scope="row">{{lista.numberMovie}}</th>
+                  <td>{{lista.titleMovie}}</td>
+                  <td>R$ {{lista.valor}}</td>
+                  <td>{{lista.data}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button (click)="PrintRecord()" type="submit" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+              <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+              <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+            </svg> Imprimir</button>
+          </div>
+          </div>
+        </div>
+      </div>
